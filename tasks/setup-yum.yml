@@ -1,0 +1,8 @@
+---
+- name: Ensure proxy option is set on YUM
+  lineinfile:
+    line: "proxy={{ proxy_url }}"
+    path: "{{ yum_config_file_path }}"
+    regexp: '^proxy='
+    state: present
+    create: true

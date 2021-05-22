@@ -1,0 +1,13 @@
+---
+- name: Include RedHat tasks
+  include_tasks: setup-yum.yml
+  when: ansible_os_family == 'RedHat' and set_proxy_on_package_manager
+
+- name: Include Debian tasks
+  include_tasks: setup-apt.yml
+  when: ansible_os_family == 'Debian' and set_proxy_on_package_manager
+
+- name: Include Docker tasks
+  include_tasks: setup-docker.yml
+  when: set_proxy_on_docker
+

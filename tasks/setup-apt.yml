@@ -1,0 +1,7 @@
+---
+- name: Ensure proxy option is set on APT
+  copy: 
+    content: |
+      Acquire::http::Proxy "{{ proxy_url }}";
+    dest: "{{ apt_config_file_path }}"
+  

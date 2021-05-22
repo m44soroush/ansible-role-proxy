@@ -1,0 +1,15 @@
+---
+set_proxy_on_package_manager: true
+set_proxy_on_docker: true
+
+
+
+proxy_url: "http://Proxy.Docker.ir:5555"
+
+
+docker_service_config_dir: /etc/systemd/system/docker.service.d
+docker_service_proxy_config_file: http-proxy.conf
+docker_service_name: docker
+
+apt_config_file_path: /etc/apt/apt.conf.d/99proxy
+yum_config_file_path: /etc/yum.conf
