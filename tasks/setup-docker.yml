@@ -2,6 +2,7 @@
 - name: Check if docker is installed and started
   shell: "systemctl is-active {{ docker_service_name }} | grep ^active -c | cat"
   register: docker_is_active
+  changed_when: false
 
 - name: Ensure config directory for docker service is present
   file:
